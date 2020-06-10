@@ -1,0 +1,4 @@
+{
+  "MONGODB_URI": "mongodb+srv://kushagra:Qwertyuiop@1@cluster0-ieft8.mongodb.net/developers?retryWrites=true&w=majority",
+  "JWTSecret": "top_secret_hai"
+}
