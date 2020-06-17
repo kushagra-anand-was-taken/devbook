@@ -1,4 +1,6 @@
 {
   "MONGODB_URI": "mongodb+srv://kushagra:Qwertyuiop@1@cluster0-ieft8.mongodb.net/developers?retryWrites=true&w=majority",
-  "JWTSecret": "top_secret_hai"
+  "JWTSecret": "top_secret_hai",
+  "ClientID": "0aaf1a389b9227022505",
+  "ClientSecret": "515b74cd9f09b22640a87a1dbf06dfb4b14be0ea"
 }
