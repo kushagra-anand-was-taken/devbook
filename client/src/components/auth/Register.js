@@ -1,6 +1,7 @@
 import React, { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
 import { setAlert } from "../../action/alert";
+import { register } from "../../action/auth";
 // import { connect } from "react-redux";
 import { useDispatch } from "react-redux";
 
@@ -24,7 +25,7 @@ function Register() {
     if (password !== password2) {
       dispatch(setAlert("Passwords do not match", "danger"));
     } else {
-      console.log(formData);
+      dispatch(register({ name, email, password }));
     }
   };
   return (
@@ -45,7 +46,6 @@ function Register() {
             name="name"
             value={name}
             onChange={(e) => changeHandler(e)}
-            required
           />
         </div>
         <div className="form-group">
