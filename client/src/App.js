@@ -9,6 +9,8 @@ import store from "./store";
 import Alert from "./components/layout/Alert";
 import { loadUser } from "./action/auth";
 import setAuthToken from "./utils/setAuthToken";
+import Dashboard from "./components/dashboard/Dashboard";
+import PrivateRoute from "./components/routing/PrivateRoute";
 
 import "./App.css";
 
@@ -27,8 +29,9 @@ const App = () => {
           <section className="container">
             <Alert />
             <Switch>
-              <Route path="/Register" component={Register} />
-              <Route path="/Login" component={Login} />
+              <Route exact path="/Register" component={Register} />
+              <Route exact path="/Login" component={Login} />
+              <PrivateRoute exact path="/dashboard" component={Dashboard} />
             </Switch>
           </section>
         </Fragment>
