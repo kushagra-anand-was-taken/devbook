@@ -60,7 +60,7 @@ function Login() {
         <input type="submit" className="btn btn-primary" value="Register" />
       </form>
       <p className="my-1">
-        Doesn't have an account? <Link to="/register">Sign In</Link>
+        Doesn't have an account? <Link to="/register">Sign Up</Link>
       </p>
     </Fragment>
   );

@@ -78,4 +78,5 @@ export const login = (body) => async (dispatch) => {
 };
 
 // // Logout
-export const logout = () => (dispatch) => dispatch({ type: LOGOUT });
+// export const logout = () => (dispatch) => dispatch({ type: LOGOUT });
+export const logout = () => ({ type: LOGOUT });
