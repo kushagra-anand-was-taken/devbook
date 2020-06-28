@@ -57,7 +57,7 @@ function Login() {
           />
         </div>
 
-        <input type="submit" className="btn btn-primary" value="Register" />
+        <input type="submit" className="btn btn-primary" value="Sign In" />
       </form>
       <p className="my-1">
         Doesn't have an account? <Link to="/register">Sign Up</Link>

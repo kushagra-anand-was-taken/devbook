@@ -1,5 +1,6 @@
 import api from "../utils/api";
 import { setAlert } from "./alert";
+import setAuthToken from "../utils/setAuthToken";
 import {
   REGISTER_SUCCESS,
   REGISTER_FAIL,
@@ -8,10 +9,12 @@ import {
   LOGIN_SUCCESS,
   LOGIN_FAIL,
   LOGOUT,
+  CLEAR_PROFILE,
 } from "./types";
 
 //Load User
 export const loadUser = () => async (dispatch) => {
+  setAuthToken(localStorage.token);
   try {
     const res = await api.get("/auth");
 
@@ -36,7 +39,7 @@ export const register = (formdata) => async (dispatch) => {
       type: REGISTER_SUCCESS,
       payload: res.data,
     });
-    // dispatch(loadUser());
+    dispatch(loadUser());
   } catch (err) {
     const errors = err.response.data.error;
     console.log(errors);
@@ -78,5 +81,8 @@ export const login = (body) => async (dispatch) => {
 };
 
 // // Logout
-// export const logout = () => (dispatch) => dispatch({ type: LOGOUT });
-export const logout = () => ({ type: LOGOUT });
+export const logout = () => (dispatch) => {
+  dispatch({ type: CLEAR_PROFILE });
+  dispatch({ type: LOGOUT });
+};
+// export const logout = () => ({ type: LOGOUT });

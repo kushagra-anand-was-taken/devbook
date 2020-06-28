@@ -4,6 +4,7 @@ const axios = require("axios");
 const Profile = require("../../models/Profile");
 const auth = require("../../middleware/auth");
 const User = require("../../models/Users");
+const Post = require("../../models/Posts");
 const { check, validationResult } = require("express-validator");
 const normalize = require("normalize-url");
 const config = require("config");
@@ -139,7 +140,8 @@ router.get(
 router.delete("/", auth, async (req, res) => {
   try {
     // Remove user posts
-    // await Post.deleteMany({ user: req.user.id });
+    await Post.deleteMany({ user: req.user.id });
+
     // Remove profile
     await Profile.findOneAndRemove({ user: req.user.id });
     // Remove user
